@@ -75,3 +75,13 @@ body {
 .button:hover {
   background-color: #2980b9;
 }
+
+/* Gaya untuk rata kiri (justify) semua teks di dalam .content kecuali judul */
+.content {
+  text-align: justify;
+}
+
+/* Gaya untuk membuat judul (class article-title) menjadi tengah (center) */
+.title.article-title {
+  text-align: center;
+}
