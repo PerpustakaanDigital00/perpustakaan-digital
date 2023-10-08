@@ -39,3 +39,41 @@ document.getElementById("actionButton").addEventListener("click", function (even
             alert("Terjadi kesalahan saat mengirim data.");
         });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Ambil elemen-elemen yang akan diisi dengan data JSON
+    var contactTitle = document.querySelector('.title.is-1');
+    var contactDescription = document.querySelector('.is-size-4');
+    var socialMediaLinks = document.querySelectorAll('.social-media a');
+
+    // Data JSON kontak
+    var contactData = {
+        "contactInfo": {
+            "title": "Contact Us",
+            "description": "Jika teman-teman semua memiliki masukan terhadap website perpustakaan kami, maka teman-teman bisa mengirimkan keluhan tersebut. Terimakasih semuanyaa",
+            "socialMedia": [
+                {
+                    "platform": "Facebook",
+                    "url": "https://facebook.com"
+                },
+                {
+                    "platform": "Instagram",
+                    "url": "https://instagram.com"
+                },
+                {
+                    "platform": "Twitter",
+                    "url": "https://twitter.com"
+                }
+            ]
+        }
+    };
+
+    // Isi elemen-elemen dengan data JSON
+    contactTitle.textContent = contactData.contactInfo.title;
+    contactDescription.textContent = contactData.contactInfo.description;
+
+    // Isi tautan media sosial dengan data JSON
+    socialMediaLinks.forEach(function (link, index) {
+        link.href = contactData.contactInfo.socialMedia[index].url;
+    });
+});
